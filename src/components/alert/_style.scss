@@ -1,0 +1,76 @@
+$alert-colors: 
+(
+  "default":    $primary,
+  "success":    $success,
+  "warning":    $warning,
+  "danger":     $danger,
+);
+.alert {
+    position: absolute;
+    top: 0;
+    margin-left: 50%;
+    width: 400px;
+    transform: translateX(-50%);
+    padding: $alert-padding-y $alert-padding-x;
+    margin-bottom: $alert-margin-bottom;
+    border: $alert-border-width solid transparent;
+    border-radius: $alert-border-radius;
+    .bold-title {
+        font-weight: $font-weight-bold;
+      }
+    .alert-description {
+        font-size: $alert-description-font-size;
+        margin: $alert-description-top-margin 0 0;
+      }
+    .alert-close {
+        font-size: $font-size-lg;
+        position:absolute;
+        top: -4px;
+        right: 10px;
+        cursor: pointer
+    }
+    .alert-close:hover {
+        animation: colorChange .5s ease-in-out forwards;
+    }
+    
+}
+.alert-show {
+        position: absolute;
+        animation:moveIn .8s ease-in-out forwards;
+}
+.alert-off {
+    position: absolute;
+    animation:moveOut .8s ease-in-out forwards;
+    // animation-direction: alternate;
+   
+}
+@each $color, $value in $alert-colors {
+    .alert-#{$color} {
+      @include alert-style($value, darken($value, 5%), $white);
+    }
+  }
+@keyframes moveIn {
+    0%{
+        top: -100%;
+    }
+    100%{
+        top:0
+    }
+}
+@keyframes moveOut {
+    0%{
+        top: 0;
+    }
+    100%{
+        top:-100%
+    }
+}
+@keyframes colorChange {
+    0%{
+        color:$white
+    }
+    100%{
+        color: $gray-600;
+    }
+}
+  

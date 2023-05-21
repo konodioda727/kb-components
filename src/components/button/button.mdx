@@ -1,0 +1,26 @@
+import { Meta, Canvas, Story } from '@storybook/addon-docs'
+import Button from './button'
+
+{/* <Meta title="Testing MDX" Component={Button}/> */}
+{/* 内嵌到cfs中不用再声明meta */}
+
+{/* mdx的meta一定要有空行 */}
+
+# testing
+
+```js
+const a = 'abc'
+```
+
+<style>
+    {
+        `
+        .jsx-title {
+            color: blue;
+        }
+        `
+    }
+</style>
+
+<h1 className='jsx-title'>title</h1>
+

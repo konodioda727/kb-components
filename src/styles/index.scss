@@ -1,0 +1,28 @@
+// 下划线代表引入时不将内容导入到css文件中，代表该scss文件不能单独编译
+@import 'mixin';
+
+@import 'variables';
+
+@import 'reboot';
+
+@import '../components/button/style';
+
+@import '../components/alert/style';
+
+@import '../components/menu/style';
+
+@import '../components/tabs/style';
+
+@import '../components/icon/style';
+
+@import './animation';
+
+@import '../components/input/style';
+
+@import '../components/progress/style';
+
+@import '../components/upload/style';
+
+@import '../components/autoComplete/style';
+
+@import '../components/form/style'
